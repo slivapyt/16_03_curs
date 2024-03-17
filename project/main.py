@@ -2,13 +2,17 @@ from datetime import datetime
 import requests
 import json
 import os
+import telebot
+
 API_KEY = os.getenv('Exchange_Rates_Data_API')
 CURRENCY_RATES_FILE = 'currency_rates.json'
+API_TOKEN = "7162375581:AAG6_Ls7HgBKi1weU-5dcrPiJ6b2GR2IzC8"
+bot = telebot.TeleBot(API_TOKEN)
 
 
 def main():
     while True:
-        currency = input("Введите названеие валюты (USD или EUR)")
+        currency = input("Введите названеие валюты (USD или EUR)\n")
         if currency not in ('USD', 'EUR'):
             print("неверная валюта")
             continue
